@@ -18,18 +18,6 @@ Unofficial practice test for the Alberta Class 4 knowledge test.
 
 Question format in `bank.js`: `{c, q, o, a, s, w, lo}` — category, question, four options, answer index (always `0`: the correct answer is `o[0]`; options are shuffled at runtime), source page, explanation, and `lo: 1` on low-yield questions (chapter 10 fuel economy).
 
-## Publish on GitHub Pages
-
-1. Create a **public** repository, for example `class4-drill`. On GitHub Free, Pages works only for public repositories.
-2. Upload `index.html`, `bank.js`, `numbers.js` and `README.md` to the root of the `main` branch: **Add file → Upload files → Commit changes**.
-3. **Settings → Pages** (in the "Code and automation" section) → **Build and deployment → Source: Deploy from a branch** → branch `main`, folder `/ (root)` → **Save**.
-4. After a minute or two the site is live at `https://<username>.github.io/class4-drill/`.
-
-To update the site, upload the changed files again. It redeploys automatically.
-
-## Alternative: Cloudflare Pages
-
-In the Cloudflare dashboard: **Workers & Pages → Create application → Get started → Drag and drop your files** → enter a project name, drop the folder → **Deploy site**. The site is served at `https://<project>.pages.dev`. To update it, use **Create a new deployment**.
 
 ## Attribution and disclaimer
 
