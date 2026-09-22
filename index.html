@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class 4 Knowledge Drill — Alberta Class 4 Practice Test (Unofficial)</title>
+<meta name="description" content="Free, unofficial practice test for the Alberta Class 4 knowledge test. 400 questions written from the Commercial Driver's Guide and the Driver's Guide, each citing its page. Real format: 30 questions, 25 to pass, stops at 6 wrong.">
+<meta property="og:title" content="Class 4 Knowledge Drill — Alberta Class 4 Practice Test">
+<meta property="og:description" content="400 practice questions from the Alberta driver guides, in the real test format. Free and unofficial.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232A4A5C'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23fff'%3E4%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --ground:#F6F4EF; --surface:#FFFFFF; --surface2:#FBFAF7;
+  --ink:#1A1C1B; --dim:#666B69; --faint:#8E938F;
+  --line:#DDD8CE; --line2:#EAE6DE;
+  --accent:#2A4A5C; --accent-soft:#E7EDF1; --accent-ink:#FFFFFF;
+  --ok:#2C6E4B; --ok-soft:#E6F0E9;
+  --bad:#A72B22; --bad-soft:#F7E8E6;
+  --warn:#C07A00; --lamp-off:#E3DFD6;
+  --shadow:0 1px 2px rgba(26,28,27,.06), 0 8px 24px -16px rgba(26,28,27,.25);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#14171A; --surface:#1C2024; --surface2:#191D21;
+    --ink:#E9E7E1; --dim:#9AA0A1; --faint:#767C7E;
+    --line:#2C3237; --line2:#242A2E;
+    --accent:#7FB0C9; --accent-soft:#1E2A32; --accent-ink:#10161A;
+    --ok:#5EB288; --ok-soft:#17251E;
+    --bad:#E0736A; --bad-soft:#2A1A18;
+    --warn:#E0A63A; --lamp-off:#2B3136;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.8);
+  }
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.55;
+  margin:0; padding-inline:18px; padding-block:22px 64px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1,h2,h3{font-family:Overpass,"Arial Narrow",system-ui,sans-serif}
+.lbl{font-family:Overpass,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:11.5px;font-weight:700;color:var(--faint)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;font-weight:500}
+.tnum{font-variant-numeric:tabular-nums}
+
+header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
+.brand{min-width:0;flex:1 1 320px}
+.brand h1{margin:0;font-size:23px;font-weight:700;letter-spacing:-.01em;line-height:1.15;text-wrap:balance}
+.brand p{margin:4px 0 0;font-size:13.5px;color:var(--dim);max-width:62ch}
+.hdr-right{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:flex;gap:2px;background:var(--surface2);border:1px solid var(--line);border-radius:9px;padding:3px}
+.seg button{font-family:Overpass,sans-serif;font-size:13px;font-weight:600;background:none;border:0;color:var(--dim);padding:6px 11px;border-radius:6px;cursor:pointer}
+.seg button[aria-pressed="true"],.seg button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+.seg button:hover:not([aria-pressed="true"]):not([aria-selected="true"]){color:var(--ink)}
+
+.rail{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 16px;box-shadow:var(--shadow)}
+.rail .cell{display:flex;flex-direction:column;gap:5px;min-width:0}
+.rail .val{font-family:Overpass,sans-serif;font-size:19px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.lamps{display:flex;gap:5px}
+.lamp{width:19px;height:11px;border-radius:2.5px;background:var(--lamp-off)}
+.lamp.on{background:var(--warn)}
+.lamp.fatal{background:var(--bad)}
+.lamp.last.on{animation:blink 1.1s steps(1,end) infinite}
+@keyframes blink{50%{opacity:.35}}
+.bar{height:5px;border-radius:3px;background:var(--lamp-off);overflow:hidden;width:130px;max-width:38vw}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s ease}
+.rail .spacer{flex:1 1 0}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.qhead{display:flex;gap:10px;align-items:baseline;justify-content:space-between;padding:15px 18px 0}
+.stamp{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:500;color:var(--dim);border:1px dashed var(--line);border-radius:5px;padding:2px 7px;white-space:nowrap;flex:none}
+.qtext{margin:11px 0 0;padding:0 18px;font-size:18px;line-height:1.45;font-weight:500;max-width:62ch}
+.opts{display:flex;flex-direction:column;margin-top:16px;border-top:1px solid var(--line2)}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line2);padding:13px 18px;font:inherit;color:inherit;cursor:pointer}
+.opt:last-child{border-bottom:0}
+.opt:hover:not(:disabled){background:var(--surface2)}
+.opt:disabled{cursor:default}
+.key{flex:none;width:24px;height:24px;border-radius:6px;border:1px solid var(--line);display:grid;place-items:center;font-family:Overpass,sans-serif;font-size:12.5px;font-weight:700;color:var(--dim);margin-top:1px}
+.opt.picked .key{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.opt.right{background:var(--ok-soft)} .opt.right .key{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{background:var(--bad-soft)} .opt.wrong .key{background:var(--bad);border-color:var(--bad);color:#fff}
+.verdict{padding:14px 18px;border-top:1px solid var(--line2);background:var(--surface2);font-size:14.5px;color:var(--dim)}
+.verdict b{font-family:Overpass,sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:11.5px;display:block;margin-bottom:4px}
+.verdict.r b{color:var(--ok)} .verdict.w b{color:var(--bad)}
+.verdict .src{color:var(--faint);font-family:"IBM Plex Mono",monospace;font-size:11.5px;display:block;margin-top:7px}
+
+.row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+button.btn{font-family:Overpass,sans-serif;font-size:14px;font-weight:600;background:var(--accent);color:var(--accent-ink);border:1px solid var(--accent);border-radius:9px;padding:9px 17px;cursor:pointer}
+button.btn.ghost{background:none;color:var(--ink);border-color:var(--line)}
+button.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+label.sw{display:inline-flex;gap:7px;align-items:center;font-size:13.5px;color:var(--dim);cursor:pointer}
+label.sw input{accent-color:var(--accent);width:15px;height:15px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.result{padding:20px 18px}
+.verdictbig{font-family:Overpass,sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.pass{color:var(--ok)} .fail{color:var(--bad)}
+.score{font-family:Overpass,sans-serif;font-size:46px;font-weight:700;line-height:1;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.result p.note{margin:8px 0 0;color:var(--dim);font-size:14.5px;max-width:60ch}
+.breakdown{display:grid;grid-template-columns:1fr auto auto;gap:2px 14px;margin-top:20px;font-size:14px;align-items:center}
+.breakdown .n{font-variant-numeric:tabular-nums;font-family:Overpass,sans-serif;font-weight:600}
+.breakdown .mini{height:4px;border-radius:2px;background:var(--lamp-off);width:70px;overflow:hidden}
+.breakdown .mini i{display:block;height:100%;background:var(--ok)}
+.breakdown .mini i.low{background:var(--bad)}
+
+details.miss{border:1px solid var(--line);border-radius:11px;background:var(--surface);margin-top:9px;overflow:hidden}
+details.miss>summary{padding:12px 15px;cursor:pointer;font-size:15px;font-weight:500;list-style:none;display:flex;gap:10px}
+details.miss>summary::-webkit-details-marker{display:none}
+details.miss>summary::before{content:"▸";color:var(--bad);flex:none}
+details.miss[open]>summary::before{content:"▾"}
+details.miss .body{padding:12px 15px 14px;font-size:14.5px;color:var(--dim);border-top:1px solid var(--line2)}
+details.miss .good{color:var(--ink)} details.miss .good b{color:var(--ok)}
+details.miss .badans{margin-top:5px} details.miss .badans b{color:var(--bad)}
+.srcline{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--faint);margin-top:8px}
+
+.grp{margin-top:22px}
+.grp h3{margin:0 0 8px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:11px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:440px}
+td{padding:9px 13px;border-bottom:1px solid var(--line2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.k{color:var(--dim);width:48%} td.v{font-weight:500;font-variant-numeric:tabular-nums}
+td.s{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--faint);white-space:nowrap;text-align:right}
+
+.hist{display:flex;flex-direction:column;gap:7px}
+.hrow{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px}
+.pill{font-family:Overpass,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:2px 8px;border-radius:20px}
+.pill.p{background:var(--ok-soft);color:var(--ok)} .pill.f{background:var(--bad-soft);color:var(--bad)}
+.hrow .sc{font-family:Overpass,sans-serif;font-weight:700;font-variant-numeric:tabular-nums}
+.hrow .when{color:var(--faint);margin-left:auto;font-size:13px}
+.empty{color:var(--dim);font-size:14.5px;padding:14px 0}
+.intro{color:var(--dim);font-size:14.5px;margin:0}
+
+footer{color:var(--faint);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;line-height:1.65;display:flex;flex-direction:column;gap:8px}
+footer b{color:var(--dim);font-weight:600}
+footer a{color:var(--dim)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:520px){
+  .qtext{font-size:17px}
+  .score{font-size:38px}
+  .breakdown .mini{display:none}
+  .breakdown{grid-template-columns:1fr auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Class 4 Knowledge Drill</h1>
+      <p id="tagline"></p>
+    </div>
+    <div class="hdr-right">
+      <div class="seg" role="group" aria-label="Language">
+        <button id="lang-en" type="button" aria-pressed="true">EN</button>
+        <button id="lang-uk" type="button" aria-pressed="false">UA</button>
+      </div>
+      <nav class="seg" role="tablist">
+        <button id="tab-test" role="tab" type="button" aria-selected="true"></button>
+        <button id="tab-nums" role="tab" type="button" aria-selected="false"></button>
+        <button id="tab-hist" role="tab" type="button" aria-selected="false"></button>
+      </nav>
+    </div>
+  </header>
+
+  <section id="view-test">
+    <div class="rail">
+      <div class="cell"><span class="lbl" data-t="mistakes"></span><div class="lamps" id="lamps"></div></div>
+      <div class="cell"><span class="lbl" data-t="question"></span><span class="val tnum" id="pos">1 / 30</span></div>
+      <div class="cell"><span class="lbl" data-t="correct"></span><span class="val tnum" id="score">0</span></div>
+      <div class="spacer"></div>
+      <div class="cell"><span class="lbl" data-t="progress"></span><div class="bar"><i id="prog" style="width:0%"></i></div></div>
+    </div>
+
+    <div id="stage" style="margin-top:18px"></div>
+
+    <div class="row" style="margin-top:16px">
+      <button class="btn ghost" id="restart" type="button" data-t="newtest"></button>
+      <label class="sw"><input type="checkbox" id="studymode"><span data-t="study"></span></label>
+      <label class="sw" id="drillwrap" hidden><input type="checkbox" id="drillonly"><span><span data-t="drill"></span> (<span id="drillcount">0</span>)</span></label>
+      <label class="sw" id="lowwrap"><input type="checkbox" id="skiplow"><span><span data-t="skiplow"></span> (<span id="lowcount">0</span>)</span></label>
+    </div>
+  </section>
+
+  <section id="view-nums" hidden></section>
+  <section id="view-hist" hidden></section>
+
+  <footer>
+    <div id="disclaimer"></div>
+    <div>Contains information licensed under the <a href="https://open.alberta.ca/licence" rel="noopener">Open Government Licence – Alberta</a>.
+      Sources: <a href="https://open.alberta.ca/publications/commercial-drivers-guide" rel="noopener">Commercial Driver's Guide</a> (Spring 2025) and
+      <a href="https://open.alberta.ca/publications/drivers-guide" rel="noopener">Driver's Guide: Cars and Light Trucks</a> (Spring 2026).</div>
+  </footer>
+</div>
+
+<script src="bank.js"></script>
+<script src="numbers.js"></script>
+<script>
+(function(){
+  "use strict";
+  var BANK = window.BANK || [], NUMS = window.NUMBERS || [];
+  var PER_TEST = 30, NEED = 25, MAX_WRONG = 6;
+
+  /* ---------- strings ---------- */
+  var T = {
+    en:{
+      tagline:"Practice for the Alberta Class 4 knowledge test: 30 questions, 25 to pass, and the test stops at 6 wrong — just like the real one. Every answer cites its page in the guide.",
+      test:"Test", nums:"Numbers", hist:"History",
+      mistakes:"Mistakes", question:"Question", correct:"Correct", progress:"Progress",
+      newtest:"New test", study:"Study mode — show the answer right away", drill:"Only my mistakes", skiplow:"Skip low-yield",
+      lowtip:"Chapter 10 fuel-economy tips. In scope for the test, but the least likely to appear.",
+      right:"Correct", wrong:"Incorrect", source:"Source: ", next:"Next →", finish:"Finish",
+      stopped:"Stopped — 6 mistakes", passed:"Passed", failed:"Not passed",
+      noteStop:function(a,n){return "On the real test the exam stops after the sixth mistake and a fail is recorded. Answered: "+a+" of "+n+".";},
+      notePass:function(need,n,w){return "You need "+need+" of "+n+" to pass. Mistakes: "+w+".";},
+      noteFail:function(need,n,k){return "You need "+need+" of "+n+" to pass. "+k+" short.";},
+      topic:"Topic", score:"Score", review:"Review mistakes", rightIs:"Correct: ", youChose:"You chose: ",
+      numsIntro:"Every numeric value from both guides, with page references.",
+      bankLbl:"Question bank", seen:"Seen", missed:"Missed", attempts:"Attempts",
+      noAttempts:"No completed attempts yet.", pPass:"pass", pStop:"stop 6", pFail:"fail", studyTag:"study",
+      disclaimer:"<b>Unofficial practice tool.</b> Not affiliated with, endorsed by or produced by the Government of Alberta. Questions were written from the two guides named below; the page after each answer (CDG / DG) points to the source. These are not the questions used on the real test. Provided as is, without warranty — always check the current official guides and alberta.ca."
+    },
+    uk:{
+      tagline:"Тренажер до knowledge test на Class 4 в Альберті: 30 питань, 25 для проходження, після 6 помилок тест зупиняється — як на справжньому. Питання англійською, як на іспиті. У кожній відповіді — сторінка гайда.",
+      test:"Тест", nums:"Цифри", hist:"Історія",
+      mistakes:"Помилки", question:"Питання", correct:"Правильно", progress:"Прогрес",
+      newtest:"Новий тест", study:"Режим розбору — показувати відповідь одразу", drill:"Тільки мої помилки", skiplow:"Без другорядного",
+      lowtip:"Розділ 10: поради щодо економії пального. Формально в програмі тесту, але найменш імовірні питання.",
+      right:"Правильно", wrong:"Неправильно", source:"Джерело: ", next:"Далі →", finish:"Завершити",
+      stopped:"Тест зупинено — 6 помилок", passed:"Пройдено", failed:"Не пройдено",
+      noteStop:function(a,n){return "На реальному тесті після шостої помилки іспит зупиняють і записують fail. Відповідей дано: "+a+" з "+n+".";},
+      notePass:function(need,n,w){return "Для проходження потрібно "+need+" з "+n+". Помилок: "+w+".";},
+      noteFail:function(need,n,k){return "Для проходження потрібно "+need+" з "+n+". Не вистачило "+k+".";},
+      topic:"Тема", score:"Рахунок", review:"Розбір помилок", rightIs:"Правильно: ", youChose:"Ти вибрав: ",
+      numsIntro:"Кожне числове значення з обох гайдів, з посиланням на сторінку.",
+      bankLbl:"Банк питань", seen:"Бачив", missed:"Помилявся", attempts:"Спроб",
+      noAttempts:"Ще жодної завершеної спроби.", pPass:"pass", pStop:"stop 6", pFail:"fail", studyTag:"розбір",
+      disclaimer:"<b>Неофіційний тренажер.</b> Не повʼязаний з урядом Альберти, не схвалений і не виданий ним. Питання складені з двох гайдів, названих нижче; сторінка після кожної відповіді (CDG / DG) вказує на джерело. Це не ті питання, що на справжньому тесті. Без гарантій — завжди звіряйся з актуальними офіційними гайдами та alberta.ca."
+    }
+  };
+  var CATS = {
+    en:{lic:"Licence & requirements",taxi:"Taxis & emergency vehicles",nsc:"NSC, inspection program, hours of service",insp:"Trip inspections",stop:"Stopping & following distance",size:"Size & weight",oper:"Operations, parking, U-turns",rail:"Railway crossings",pax:"Passengers",emerg:"Emergencies & collisions",fuel:"Fuel & efficiency",signs:"Signs, signals & markings",rules:"Rules of the road & parking",law:"Demerits, suspensions, impaired driving",dist:"Hazards, distraction, fatigue"},
+    uk:{lic:"Ліцензія та вимоги",taxi:"Таксі та екстрені авто",nsc:"NSC, техогляд, години роботи",insp:"Trip inspections",stop:"Гальмування й дистанція",size:"Габарити й вага",oper:"Керування, парковка, U-turn",rail:"Залізничні переїзди",pax:"Пасажири",emerg:"Аварії та надзвичайні ситуації",fuel:"Паливо й економія",signs:"Знаки, сигнали, розмітка",rules:"Правила руху й парковки",law:"Демерити, суспензії, IRS",dist:"Небезпеки, відволікання, втома"}
+  };
+  var lang = "en";
+  function t(k){ return T[lang][k]; }
+  function cat(c){ return CATS[lang][c] || c; }
+
+  /* ---------- per-viewer storage (localStorage only) ---------- */
+  var LS = "class4drill-progress-v1";
+  var stats = {q:{}, attempts:[]};
+  function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+  function loadStats(){
+    var raw=lsGet(LS), v=null;
+    try{ v = raw ? JSON.parse(raw) : null; }catch(e){ v=null; }
+    if(!v || typeof v!=="object") return {q:{},attempts:[]};
+    return { q:(v.q && typeof v.q==="object")?v.q:{}, attempts:Array.isArray(v.attempts)?v.attempts.slice(-60):[] };
+  }
+  function save(){ lsSet(LS, JSON.stringify(stats)); }
+
+  function hash(s){ var h=5381,i=s.length; while(i) h=(h*33)^s.charCodeAt(--i); return (h>>>0).toString(36); }
+  BANK.forEach(function(q){ q.id = hash(q.q); });
+
+  function wrongPool(){ return BANK.filter(function(q){ var s=stats.q[q.id]; return s && s.wrong>0; }); }
+
+  /* ---------- attempt ---------- */
+  var att = null, view = "test";
+  function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), x=a[i]; a[i]=a[j]; a[j]=x; } return a; }
+  function $(id){ return document.getElementById(id); }
+
+  function buildQueue(){
+    var src = BANK, skip = $("skiplow").checked;
+    if(skip) src = src.filter(function(q){ return !q.lo; });
+    if($("drillonly").checked){
+      var p = wrongPool(); if(skip) p = p.filter(function(q){ return !q.lo; });
+      if(p.length >= 5) src = p;
+    }
+    return shuffle(src.slice()).slice(0, Math.min(PER_TEST, src.length)).map(function(q){
+      var idx = shuffle([0,1,2,3]);
+      return { q:q, order:idx, correct:idx.indexOf(q.a), picked:null };
+    });
+  }
+  function newAttempt(){
+    att = { items:buildQueue(), i:0, right:0, wrong:0, over:false, t:Date.now(), study:$("studymode").checked };
+    render();
+  }
+  function recordAnswer(item, ok){
+    var s = stats.q[item.q.id] || {seen:0,wrong:0};
+    s.seen=(s.seen||0)+1; if(!ok) s.wrong=(s.wrong||0)+1;
+    stats.q[item.q.id]=s;
+  }
+  function finish(stopped){
+    att.over = true;
+    att.passed = !stopped && att.right>=Math.min(NEED, att.items.length);
+    stats.attempts.push({ t:att.t, n:att.items.length, right:att.right, wrong:att.wrong,
+      passed:att.passed, stopped:!!stopped, study:att.study });
+    stats.attempts = stats.attempts.slice(-60);
+    save();
+  }
+  function pick(n){
+    var item = att.items[att.i];
+    if(!item || item.picked!==null || att.over) return;
+    item.picked = n;
+    var ok = n===item.correct;
+    if(ok) att.right++; else att.wrong++;
+    recordAnswer(item, ok);
+    if(att.wrong >= MAX_WRONG){ finish(true); render(); return; }
+    if(att.study) render(); else next();
+  }
+  function next(){
+    var item = att.items[att.i];
+    if(item && item.picked===null) return;
+    if(att.i >= att.items.length-1){ if(!att.over) finish(false); render(); return; }
+    att.i++; render();
+  }
+
+  /* ---------- render ---------- */
+  function el(tag, cls, text){ var e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e; }
+
+  function applyStatic(){
+    document.documentElement.lang = (lang==="uk") ? "uk" : "en";
+    $("tagline").textContent = t("tagline");
+    $("tab-test").textContent = t("test"); $("tab-nums").textContent = t("nums"); $("tab-hist").textContent = t("hist");
+    Array.prototype.forEach.call(document.querySelectorAll("[data-t]"), function(n){ n.textContent = t(n.getAttribute("data-t")); });
+    $("lowwrap").title = t("lowtip");
+    $("disclaimer").innerHTML = t("disclaimer");
+    $("lang-en").setAttribute("aria-pressed", lang==="en");
+    $("lang-uk").setAttribute("aria-pressed", lang==="uk");
+  }
+
+  function renderRail(){
+    var lamps=$("lamps"); lamps.innerHTML="";
+    for(var i=0;i<MAX_WRONG;i++){
+      var l=el("div","lamp");
+      if(i<att.wrong) l.classList.add(i===MAX_WRONG-1?"fatal":"on");
+      if(i===MAX_WRONG-2) l.classList.add("last");
+      lamps.appendChild(l);
+    }
+    var n=att.items.length;
+    var answered=att.items.filter(function(x){return x.picked!==null;}).length;
+    $("pos").textContent=(att.over?answered:att.i+1)+" / "+n;
+    $("score").textContent=att.right;
+    $("prog").style.width=Math.round(answered/n*100)+"%";
+  }
+
+  function renderQuestion(){
+    var stage=$("stage"); stage.innerHTML="";
+    var item=att.items[att.i], q=item.q;
+    var card=el("div","card"), head=el("div","qhead");
+    head.appendChild(el("span","lbl",cat(q.c)));
+    head.appendChild(el("span","stamp",q.s));
+    card.appendChild(head);
+    card.appendChild(el("p","qtext",q.q));
+    var opts=el("div","opts");
+    item.order.forEach(function(orig,n){
+      var b=el("button","opt"); b.type="button";
+      b.appendChild(el("span","key",String.fromCharCode(65+n)));
+      b.appendChild(el("span",null,q.o[orig]));
+      if(item.picked!==null){
+        b.disabled=true;
+        if(att.study||att.over){
+          if(n===item.correct) b.classList.add("right");
+          else if(n===item.picked) b.classList.add("wrong");
+        } else if(n===item.picked) b.classList.add("picked");
+      } else b.addEventListener("click", function(){ pick(n); });
+      opts.appendChild(b);
+    });
+    card.appendChild(opts);
+    if(item.picked!==null && att.study){
+      var ok=item.picked===item.correct, v=el("div","verdict "+(ok?"r":"w"));
+      v.appendChild(el("b",null, ok?t("right"):t("wrong")));
+      v.appendChild(el("span",null,q.w));
+      v.appendChild(el("span","src",t("source")+q.s));
+      card.appendChild(v);
+    }
+    stage.appendChild(card);
+    if(item.picked!==null && att.study){
+      var row=el("div","row"); row.style.marginTop="14px";
+      var nb=el("button","btn", att.i>=att.items.length-1 ? t("finish") : t("next"));
+      nb.type="button"; nb.addEventListener("click", next);
+      row.appendChild(nb); stage.appendChild(row);
+    }
+  }
+
+  function renderResult(){
+    var stage=$("stage"); stage.innerHTML="";
+    var n=att.items.length, need=Math.min(NEED,n);
+    var passed=!!att.passed;
+    var answered=att.items.filter(function(x){return x.picked!==null;}).length;
+    var card=el("div","card"), r=el("div","result");
+    r.appendChild(el("div","verdictbig "+(passed?"pass":"fail"), att.wrong>=MAX_WRONG ? t("stopped") : (passed?t("passed"):t("failed"))));
+    r.appendChild(el("div","score", att.right+" / "+n));
+    var note = att.wrong>=MAX_WRONG ? T[lang].noteStop(answered,n) : (passed ? T[lang].notePass(need,n,att.wrong) : T[lang].noteFail(need,n,need-att.right));
+    r.appendChild(el("p","note",note));
+    var by={};
+    att.items.forEach(function(it){ if(it.picked===null) return; var c=it.q.c; by[c]=by[c]||{n:0,ok:0}; by[c].n++; if(it.picked===it.correct) by[c].ok++; });
+    var keys=Object.keys(by).sort(function(a,b){ return (by[a].ok/by[a].n)-(by[b].ok/by[b].n); });
+    if(keys.length){
+      var bd=el("div","breakdown");
+      bd.appendChild(el("div","lbl",t("topic"))); bd.appendChild(el("div","lbl","")); bd.appendChild(el("div","lbl",t("score")));
+      keys.forEach(function(k){
+        bd.appendChild(el("div",null,cat(k)));
+        var m=el("div","mini"), f=el("i"), pct=by[k].ok/by[k].n;
+        f.style.width=Math.round(pct*100)+"%"; if(pct<0.8) f.className="low";
+        m.appendChild(f); bd.appendChild(m);
+        bd.appendChild(el("div","n", by[k].ok+"/"+by[k].n));
+      });
+      r.appendChild(bd);
+    }
+    card.appendChild(r); stage.appendChild(card);
+    var missed=att.items.filter(function(it){ return it.picked!==null && it.picked!==it.correct; });
+    if(missed.length){
+      var h=el("div","lbl", t("review")+" ("+missed.length+")"); h.style.marginTop="24px"; h.style.display="block"; stage.appendChild(h);
+      missed.forEach(function(it){
+        var d=el("details","miss"); d.appendChild(el("summary",null,it.q.q));
+        var b=el("div","body");
+        var good=el("div","good"); good.appendChild(el("b",null,t("rightIs"))); good.appendChild(document.createTextNode(it.q.o[it.q.a])); b.appendChild(good);
+        var bad=el("div","badans"); bad.appendChild(el("b",null,t("youChose"))); bad.appendChild(document.createTextNode(it.q.o[it.order[it.picked]])); b.appendChild(bad);
+        var w=el("div"); w.style.marginTop="9px"; w.textContent=it.q.w; b.appendChild(w);
+        b.appendChild(el("div","srcline",t("source")+it.q.s));
+        d.appendChild(b); stage.appendChild(d);
+      });
+    }
+  }
+
+  function renderNums(){
+    var v=$("view-nums"); v.innerHTML="";
+    v.appendChild(el("p","intro",t("numsIntro")));
+    NUMS.forEach(function(g){
+      var w=el("div","grp"); w.appendChild(el("h3",null,g.g));
+      var tw=el("div","tblwrap"), tb=el("table"), body=el("tbody");
+      g.rows.forEach(function(row){ var tr=el("tr"); tr.appendChild(el("td","k",row[0])); tr.appendChild(el("td","v",row[1])); tr.appendChild(el("td","s",row[2])); body.appendChild(tr); });
+      tb.appendChild(body); tw.appendChild(tb); w.appendChild(tw); v.appendChild(w);
+    });
+  }
+
+  function renderHist(){
+    var v=$("view-hist"); v.innerHTML="";
+    var rail=el("div","rail");
+    [[t("bankLbl"),BANK.length],[t("seen"),Object.keys(stats.q).length],[t("missed"),wrongPool().length],[t("attempts"),stats.attempts.length]].forEach(function(p){
+      var c=el("div","cell"); c.appendChild(el("span","lbl",p[0])); c.appendChild(el("span","val tnum",String(p[1]))); rail.appendChild(c);
+    });
+    v.appendChild(rail);
+    var list=el("div","hist"); list.style.marginTop="16px";
+    var a=stats.attempts.slice().reverse();
+    if(!a.length) list.appendChild(el("div","empty",t("noAttempts")));
+    a.forEach(function(x){
+      var row=el("div","hrow");
+      row.appendChild(el("span","pill "+(x.passed?"p":"f"), x.passed?t("pPass"):(x.stopped?t("pStop"):t("pFail"))));
+      row.appendChild(el("span","sc", x.right+" / "+x.n));
+      if(x.study){ var m=el("span","mono",t("studyTag")); m.style.color="var(--faint)"; row.appendChild(m); }
+      var d=new Date(x.t);
+      row.appendChild(el("span","when", d.toLocaleDateString()+" "+d.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})));
+      list.appendChild(row);
+    });
+    v.appendChild(list);
+  }
+
+  function render(){
+    var wp=wrongPool().length; $("drillcount").textContent=String(wp); $("drillwrap").hidden = wp<5;
+    $("lowcount").textContent=String(BANK.filter(function(q){return q.lo;}).length);
+    if(!att){ newAttempt(); return; }
+    renderRail();
+    if(att.over) renderResult(); else renderQuestion();
+    if(view==="nums") renderNums();
+    if(view==="hist") renderHist();
+  }
+
+  function setView(v){
+    view=v;
+    $("view-test").hidden = v!=="test"; $("view-nums").hidden = v!=="nums"; $("view-hist").hidden = v!=="hist";
+    $("tab-test").setAttribute("aria-selected", v==="test");
+    $("tab-nums").setAttribute("aria-selected", v==="nums");
+    $("tab-hist").setAttribute("aria-selected", v==="hist");
+    if(v==="nums") renderNums(); if(v==="hist") renderHist();
+  }
+  function setLang(l){
+    lang = (l==="uk") ? "uk" : "en";
+    lsSet("class4drill-lang", lang);
+    applyStatic();
+    if(att) render();
+    if(view==="nums") renderNums(); if(view==="hist") renderHist();
+  }
+
+  $("tab-test").addEventListener("click",function(){setView("test");});
+  $("tab-nums").addEventListener("click",function(){setView("nums");});
+  $("tab-hist").addEventListener("click",function(){setView("hist");});
+  $("lang-en").addEventListener("click",function(){setLang("en");});
+  $("lang-uk").addEventListener("click",function(){setLang("uk");});
+  $("restart").addEventListener("click", newAttempt);
+  $("studymode").addEventListener("change", function(){
+    if(att && !att.over && att.items.filter(function(x){return x.picked!==null;}).length===0) newAttempt();
+    else if(att){
+      att.study=this.checked;
+      var cur=att.items[att.i];
+      if(!att.over && !att.study && cur && cur.picked!==null) next(); else render();
+    }
+  });
+  $("drillonly").addEventListener("change", newAttempt);
+  $("skiplow").addEventListener("change", newAttempt);
+  document.addEventListener("keydown", function(e){
+    if(view!=="test" || !att || att.over) return;
+    if(e.ctrlKey || e.metaKey || e.altKey) return;
+    var tg = e.target || {}, tag = tg.tagName;
+    if(tag==="TEXTAREA" || tag==="SELECT" || (tag==="INPUT" && !/^(checkbox|radio)$/i.test(tg.type||""))) return;
+    var k=(e.key||"").toLowerCase(), n=-1;
+    if(k.length===1){
+      if(k>="1"&&k<="4") n=+k-1; else if(k>="a"&&k<="d") n=k.charCodeAt(0)-97;
+      if(n>=0){
+        e.preventDefault();
+        var ae=document.activeElement;
+        if(ae && ae!==document.body && !$("stage").contains(ae) && ae.blur) ae.blur();
+        pick(n);
+      }
+      return;
+    }
+    if(k==="enter" && !/^(BUTTON|A|SUMMARY)$/.test(tag)){ e.preventDefault(); next(); }
+  });
+
+  /* ---------- start (everything above is declared) ---------- */
+  stats = loadStats();
+  var saved = lsGet("class4drill-lang");
+  lang = (saved==="uk" || saved==="en") ? saved : ((navigator.language||"").toLowerCase().indexOf("uk")===0 ? "uk" : "en");
+  applyStatic();
+  render();
+})();
+</script>
+</body>
+</html>
